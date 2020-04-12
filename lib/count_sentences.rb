@@ -4,6 +4,7 @@ class String
 
   def sentence?
     self.end_with?(".") 
+
   end
 
   def question?
@@ -15,6 +16,7 @@ class String
   end
 
   def count_sentences
-    self.split
+      sentence_array = self.split(/[.?!]/).reject {|string| string.empty?}
+      sentence_array.length
   end
 end
