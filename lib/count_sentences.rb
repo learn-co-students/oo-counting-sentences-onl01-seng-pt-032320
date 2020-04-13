@@ -15,10 +15,9 @@ class String
   end
 
   def count_sentences
-    counter = 0
-    split_words = []
-    split_words << self.split(".","?","!")
-      counter += 1
+    split_words = self.split(/[.?!]/).reject {|string| string.empty?}
+    
+    return split_words.length
+  
   end
-  split_words
 end
