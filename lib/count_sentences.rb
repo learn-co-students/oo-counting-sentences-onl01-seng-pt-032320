@@ -1,20 +1,22 @@
-require 'pry'
+#require 'pry'
 
 class String
 
   def sentence?
-    
+    self.end_with?(".")
   end
 
-  def question?
-
+def question?
+    self.end_with?("?")
   end
-
+  
   def exclamation?
-
+    self.end_with?('!')
   end
 
   def count_sentences
-
-  end
+    self.split(/[.!?]/).reject {|x| x.empty?}.size # using regex to sift through for .,! and ?
+    #binding.pry
+    end
+  
 end
